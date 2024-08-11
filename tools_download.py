@@ -15,7 +15,6 @@ download_file(url, save_path)
 
 sys.exit(0)
 
-# 小说模型训练数据集下载链接: https://pan.baidu.com/s/1bC8fH8hyt28L9pV3fjOHIQ 提取码: 9i9g
 def find_txt_files(directory):
     return glob.glob(os.path.join(directory, '**', '*.txt'), recursive=True)
 

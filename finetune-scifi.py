@@ -24,7 +24,7 @@ TORCH_SEED = 1337
 torch.manual_seed(TORCH_SEED)
 
 
-# 准备训练数据
+# Preparing training data
 with open('data/scifi-finetune.json', 'r') as file:
     alpaca = json.load(file)
     text = alpaca[1000:5001]
@@ -35,10 +35,10 @@ with open('data/scifi-finetune.json', 'r') as file:
 # Using TikToken (Same as GPT3) to tokenize the source text
 encoding = tiktoken.get_encoding("cl100k_base")
 tokenized_text = encoding.encode(str(text))
-tokenized_text = torch.tensor(tokenized_text, dtype=torch.long, device=device)  # 将77,919个tokens 转换到Pytorch张量中
+tokenized_text = torch.tensor(tokenized_text, dtype=torch.long, device=device)  # Transform 77,919 tokens into Pytorch tensor
 
 total_tokens = encoding.encode_ordinary(str(text))
-print(f"数据集合计有 {len(total_tokens):,} tokens")
+print(f"Datasets have a total of {len(total_tokens):,} tokens")
 
 
 # Split train and validation

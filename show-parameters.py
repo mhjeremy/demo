@@ -8,4 +8,4 @@ model.load_state_dict(state_dict)
 # Calculate the number of parameters
 total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
 
-print(f"模型参数量为： {total_params:,}")
+print(f"Total parameters are： {total_params:,}")

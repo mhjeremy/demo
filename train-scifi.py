@@ -32,7 +32,7 @@ run["hparams"] = {
     "context_length": context_length
 }
 
-# 准备训练数据
+# Preparing training data
 with open('data/scifi.txt', 'r', encoding="utf-8") as file:
     text = file.read()
 
@@ -44,7 +44,7 @@ tokenized_text = encoding.encode(text)
 tokenized_text = torch.tensor(tokenized_text, dtype=torch.long, device=device)  # 将77,919个tokens 转换到Pytorch张量中
 
 total_tokens = encoding.encode_ordinary(text)
-print(f"数据集合计有 {len(total_tokens):,} tokens")
+print(f"Datasets have a total of {len(total_tokens):,} tokens")
 
 
 
